@@ -147,7 +147,9 @@ how you're using untrusted data.
         name = request.args.get("name", "")
         return f"Hello, {escape(name)}!"
 
-User input can be submitted to the view function via the URL as query paramters (``/hello?name=Bob``). Refer :ref:`the-request-object` for information on how the query parameters are accessed.
+User input can be submitted to the view function via the URL as query parameters,
+like ``/hello?name=Bob``. Refer :ref:`the-request-object` for information on how
+the query parameters are accessed.
 
 If a user managed to submit ``/hello?name=<script>alert("bad")</script>``,
 escaping causes it to be rendered as text, rather than running the
