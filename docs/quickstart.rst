@@ -171,7 +171,7 @@ Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL. ::
     def hello():
         return 'Hello, World'
 
-You can do more! You can enter user-provided values, make parts of the URL dynamic and attach multiple
+You can do more! You can make parts of the URL dynamic and attach multiple
 rules to a function.
 
 
