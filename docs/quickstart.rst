@@ -125,27 +125,6 @@ See also:
     nice error pages.
 
 
-Routing
--------
-
-Modern web applications use meaningful URLs to help users. Users are more
-likely to like a page and come back if the page uses a meaningful URL they can
-remember and use to directly visit a page.
-
-Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL. ::
-
-    @app.route('/')
-    def index():
-        return 'Index Page'
-
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World'
-
-You can do more! You can enter user-provided values, make parts of the URL dynamic and attach multiple
-rules to a function.
-
-
 HTML Escaping
 -------------
 
@@ -173,6 +152,28 @@ User input can be submitted to the view function via the URL as query paramters 
 If a user managed to submit ``/hello?name=<script>alert("bad")</script>``,
 escaping causes it to be rendered as text, rather than running the
 script in the user's browser.
+
+
+Routing
+-------
+
+Modern web applications use meaningful URLs to help users. Users are more
+likely to like a page and come back if the page uses a meaningful URL they can
+remember and use to directly visit a page.
+
+Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL. ::
+
+    @app.route('/')
+    def index():
+        return 'Index Page'
+
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World'
+
+You can do more! You can enter user-provided values, make parts of the URL dynamic and attach multiple
+rules to a function.
+
 
 Variable Rules
 ``````````````
