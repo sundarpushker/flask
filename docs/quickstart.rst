@@ -505,6 +505,8 @@ The other possibility is passing a whole WSGI environment to the
     with app.request_context(environ):
         assert request.method == 'POST'
 
+.. _the-request-object:
+
 The Request Object
 ``````````````````
 
