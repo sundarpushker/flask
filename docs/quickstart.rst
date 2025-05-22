@@ -174,7 +174,6 @@ Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL. ::
 You can do more! You can make parts of the URL dynamic and attach multiple
 rules to a function.
 
-
 Variable Rules
 ``````````````
 
