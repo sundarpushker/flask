@@ -125,34 +125,6 @@ See also:
     nice error pages.
 
 
-HTML Escaping
--------------
-
-When returning HTML (the default response type in Flask), any
-user-provided values rendered in the output must be escaped to protect
-from injection attacks. HTML templates rendered with Jinja, introduced
-later, will do this automatically.
-
-:func:`~markupsafe.escape`, shown here, can be used manually. It is
-omitted in most examples for brevity, but you should always be aware of
-how you're using untrusted data.
-
-.. code-block:: python
-
-    from markupsafe import escape
-
-    @app.route("/<path:name>")
-    def hello(name):
-        return f"Hello, {escape(name)}!"
-
-If a user managed to submit the name ``<script>alert("bad")</script>``,
-escaping causes it to be rendered as text, rather than running the
-script in the user's browser.
-
-``<name>`` in the route captures a value from the URL and passes it to
-the view function. These variable rules are explained below.
-
-
 Routing
 -------
 
@@ -170,8 +142,37 @@ Use the :meth:`~flask.Flask.route` decorator to bind a function to a URL. ::
     def hello():
         return 'Hello, World'
 
-You can do more! You can make parts of the URL dynamic and attach multiple
+You can do more! You can enter user-provided values, make parts of the URL dynamic and attach multiple
 rules to a function.
+
+
+HTML Escaping
+-------------
+
+When returning HTML (the default response type in Flask), any
+user-provided values rendered in the output must be escaped to protect
+from injection attacks. HTML templates rendered with Jinja, introduced
+later, will do this automatically.
+
+:func:`~markupsafe.escape`, shown here, can be used manually. It is
+omitted in most examples for brevity, but you should always be aware of
+how you're using untrusted data.
+
+.. code-block:: python
+
+    from flask import request
+    from markupsafe import escape
+
+    @app.route("/hello")
+    def hello():
+        name = request.args.get("name", "")
+        return f"Hello, {escape(name)}!"
+
+User input can be submitted to the view function via the URL as query paramters (``/hello?name=Bob``). Refer :ref:`the-request-object` for information on how the query parameters are accessed.
+
+If a user managed to submit ``/hello?name=<script>alert("bad")</script>``,
+escaping causes it to be rendered as text, rather than running the
+script in the user's browser.
 
 Variable Rules
 ``````````````
