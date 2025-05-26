@@ -461,7 +461,6 @@ class Blueprint(Scaffold):
             self.add_app_template_filter(func)
             return func
 
-
         def decorator(f: T_template_filter) -> T_template_filter:
             self.add_app_template_filter(f, name=name)
             return f

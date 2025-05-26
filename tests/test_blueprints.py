@@ -387,11 +387,9 @@ def test_template_filter(app):
     assert app.jinja_env.filters["my_reverse_2"] == my_reverse_2
     assert app.jinja_env.filters["my_reverse_2"]("abcd") == "dcba"
 
-
     assert "my_reverse_custom_name_3" in app.jinja_env.filters.keys()
     assert app.jinja_env.filters["my_reverse_custom_name_3"] == my_reverse_3
     assert app.jinja_env.filters["my_reverse_custom_name_3"]("abcd") == "dcba"
-
 
     assert "my_reverse_custom_name_4" in app.jinja_env.filters.keys()
     assert app.jinja_env.filters["my_reverse_custom_name_4"] == my_reverse_4
