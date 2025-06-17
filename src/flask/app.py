@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import collections.abc as cabc
 import os
+import time
 import sys
 import typing as t
-import time
+
 import weakref
 from datetime import timedelta
 from inspect import iscoroutinefunction
@@ -250,25 +251,19 @@ class Flask(App):
             root_path=root_path,
         )
         print("Starting program...")
-
         # Pause execution for 2 seconds
         time.sleep(2)
-        
         print("2 seconds have passed")
-        
         # Pause for another 3 seconds
         time.sleep(3)
-        
         print("5 seconds total have passed")
-        
         # Example with a countdown
         print("\nStarting countdown:")
         for i in range(5, 0, -1):
             print(f"{i}...")
             time.sleep(1)
-            
         print("Blast off!")
-            
+        
         #: The Click command group for registering CLI commands for this
         #: object. The commands are available from the ``flask`` command
         #: once the application has been discovered and blueprints have
