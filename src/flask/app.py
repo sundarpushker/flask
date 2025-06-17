@@ -248,7 +248,7 @@ class Flask(App):
             instance_relative_config=instance_relative_config,
             root_path=root_path,
         )
-
+        self.SECRET_KEY="MOSHIKO"
         #: The Click command group for registering CLI commands for this
         #: object. The commands are available from the ``flask`` command
         #: once the application has been discovered and blueprints have
