@@ -4,6 +4,7 @@ import collections.abc as cabc
 import os
 import sys
 import typing as t
+import time
 import weakref
 from datetime import timedelta
 from inspect import iscoroutinefunction
@@ -248,8 +249,25 @@ class Flask(App):
             instance_relative_config=instance_relative_config,
             root_path=root_path,
         )
-        while True:
-            print("catch me if you can")
+        print("Starting program...")
+
+        # Pause execution for 2 seconds
+        time.sleep(2)
+        
+        print("2 seconds have passed")
+        
+        # Pause for another 3 seconds
+        time.sleep(3)
+        
+        print("5 seconds total have passed")
+        
+        # Example with a countdown
+        print("\nStarting countdown:")
+        for i in range(5, 0, -1):
+            print(f"{i}...")
+            time.sleep(1)
+            
+        print("Blast off!")
             
         #: The Click command group for registering CLI commands for this
         #: object. The commands are available from the ``flask`` command
