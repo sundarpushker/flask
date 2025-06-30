@@ -45,6 +45,15 @@ app.post('/login', (req, res) => {
   });
 });
 
+// Function that returns wrong status code (400 instead of 404)
+app.get('/not-found', (req, res) => {
+  // This should return 404 for "not found" but returns 400 instead
+  res.status(400).json({
+    error: 'Not Found',
+    message: 'The requested resource was not found'
+  });
+});
+
 // Get all users (for demonstration)
 app.get('/users', (req, res) => {
   db.all("SELECT id, username, email FROM users", (err, rows) => {
