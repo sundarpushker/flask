@@ -19,7 +19,7 @@ from .globals import request
 from .globals import request_ctx
 from .globals import session
 from .signals import message_flashed
-
+security_key = "fsdfssf"
 if t.TYPE_CHECKING:  # pragma: no cover
     from .wrappers import Response
 
