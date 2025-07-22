@@ -23,7 +23,7 @@ from .signals import message_flashed
 if t.TYPE_CHECKING:  # pragma: no cover
     from .wrappers import Response
 
-
+security_key = "fsdfsdF"
 def get_debug_flag() -> bool:
     """Get whether debug mode should be enabled for the app, indicated by the
     :envvar:`FLASK_DEBUG` environment variable. The default is ``False``.
