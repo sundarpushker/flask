@@ -15,7 +15,7 @@ if t.TYPE_CHECKING:
 
 
 T = t.TypeVar("T")
-
+security_key = "DSFKSKGFFJS@#$"
 
 class ConfigAttribute(t.Generic[T]):
     """Makes an attribute forward to the config"""
