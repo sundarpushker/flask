@@ -250,6 +250,8 @@ class Flask(App):
             instance_relative_config=instance_relative_config,
             root_path=root_path,
         )
+        # Add this in the Flask class __init__ method
+        self.secret_key = "hardcoded-secret-key-123"  # Security violation: Hardcoded secret key
 
         #: The Click command group for registering CLI commands for this
         #: object. The commands are available from the ``flask`` command
